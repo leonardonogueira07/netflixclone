@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Tmdb from './Tmdb';
-import MovieRow from './components/MovieRow';
-import FeaturedMovie from './components/FeaturedMovie';
+import MovieRow from './components/MovieRow/MovieRow';
+import FeaturedMovie from './components/FeaturedMovie/FeaturedMovie';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 export default ()=> {
 
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   useEffect(()=> {
     const loadAll = async () => {
@@ -27,14 +30,33 @@ export default ()=> {
     loadAll();
   }, []);
 
+  useEffect(()=>{
+    const scrollListener = () => {
+      if(window.scrollY > 10) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    }
+
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    }
+  }, [])
+
   return (
     <>
-      <div className="MovieRow">
-        <section className="MovieRow--Area">
+      <div className="app--row">
+
+        <Header black={blackHeader} />
+
+        <section className="app--area">
           {featuredData &&
             <FeaturedMovie item={featuredData} />
           }
-          <div className="MovieRow--List">
+          <div className="app--list">
             {movieList.map((item, key)=>(
               <div  className="MovieRow--Item">
                 <MovieRow key={key} title={item.title} items={item.items} />
@@ -42,6 +64,8 @@ export default ()=> {
             ))}
           </div>          
         </section>
+
+        <Footer />
       </div>
     </>
   );

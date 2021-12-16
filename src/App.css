@@ -11,3 +11,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.app--list {
+    margin-top: 0;
+}
+
