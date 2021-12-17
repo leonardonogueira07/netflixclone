@@ -1,12 +1,13 @@
 import React from 'react';
 import './Header.css';
+import Img from '../Header/img/netflix-logo.svg';
 
 export default ({black}) => {
     return (
         <header className={black ? 'black' : ''}>
             <div className="header--logo">
                 <a href="./">
-                  <img src="https://sm.ign.com/ign_br/news/n/netflix-ju/netflix-just-bought-the-rights-to-an-rnosleep-horror-story_r3wy.jpg"/>
+                  <img src={Img} />
                 </a>
             </div> 
             <div className="header--user">

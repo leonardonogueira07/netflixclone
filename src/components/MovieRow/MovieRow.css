@@ -58,3 +58,9 @@
 .MovieRow:hover .movierow--right {
     opacity: 1;
 }
+@media (max-width:760px) {
+    .movierow--left,
+    .movierow--right {
+        opacity: 1;
+    }
+}

@@ -8,8 +8,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 38px;
+    padding-left: 30px;
+    padding-right: 30px;
     background: transparent;
     transition: all ease 0.5s;
 }
@@ -19,18 +19,22 @@ header.black {
 }
 
 .header--logo img {
-    width: 9vw;
+    height: 30px;
 }
 
 .header--logo {
-    height: 70px;
+    height: 30px;
 }
 
 .header--user img {
-    width: 3vw;
+    height: 40px;
     border-radius: 4px;
 }
 
 .header--user {
     height: 40px;
+}
+
+@media (max-width:760px) {
+
 }

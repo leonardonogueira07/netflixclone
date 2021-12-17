@@ -1,5 +1,5 @@
 .featured {
-    height: 60vh;
+    height: 70vh;
 }
 
 .featured--vertical {
@@ -86,4 +86,32 @@
     margin-top: 15px;
     font-size: 18px;
     color: #999;
+}
+
+@media (max-width:760px) {
+    .featured {
+        height: 80vh;
+    }
+
+    .featured--name {
+        font-size: 40px;
+    }
+
+    .featured--info {
+        font-size: 16px;
+    }
+
+    .featured--description {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .featured--watchbutton, 
+    .featured--mylistbutton {
+        font-size: 16px;
+   }
+
+   .featured--genres {
+    font-size: 15px;
+   }
 }
